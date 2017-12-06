@@ -1,6 +1,5 @@
 .wrapper-clock {
-  background-color: #d2d2d236;
-  height: 500px; }
+  background-color: #d2d2d236; }
 
 .z-modal {
   display: none; }
@@ -29,3 +28,10 @@
   .sorting-zone span {
     font: 400 14px system-ui;
     padding-top: 7px; }
+
+.zone-select {
+  float: left;
+  padding: 10px 10px 10px 10px;
+  width: 250px;
+  height: 180px;
+  text-align: center; }

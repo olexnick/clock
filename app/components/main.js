@@ -20,10 +20,8 @@ class App extends React.Component {
     return (
       <div>
         <ModalDialog />
-        {/* <SelectedGMT zone={"America/Toronto"} /> */}
-
         <div className="row">
-          <div className="hidden-xs hidden-sm col-md-1 col-lg-1" />
+          <div className="hidden-xs hidden-sm col-md-1 col-lg-1"/>
           <div className="col-xs-12 col-sm-10 col-md-12 col-lg-10">
             <div className="card wrapper-clock">
               <div className="card-header text-center">Time Zones</div>
@@ -35,7 +33,7 @@ class App extends React.Component {
               </div>
             </div>
           </div>
-          <div className="hidden-xs hidden-sm col-md-1 col-lg-1" />
+          <div className="hidden-xs hidden-sm col-md-1 col-lg-1"/>
         </div>
       </div>
     );

@@ -12,18 +12,23 @@ class CollectionZone extends React.Component {
     };
   }
   componentDidMount() {
-    setInterval(function () {
-      this.setState({
-        time: new Date().getTime()
-      });
-    }.bind(this), 1000);
+    setInterval(
+      function() {
+        this.setState({
+          time: new Date().getTime()
+        });
+      }.bind(this),
+      1000
+    );
   }
 
   render() {
     return (
       <div>
         {this.props.selectedZones.map((zone, index) => {
-          return <SelectedGMT time={this.state.time} zone={zone} key={index} />;
+          return (
+            <SelectedGMT time={this.state.time} zone={zone.name} key={index} />
+          );
         })}
       </div>
     );

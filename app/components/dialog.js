@@ -10,7 +10,7 @@ class Dialogs extends React.Component{
   render(){
 	   return(
        <div className="modalDialogs">
-         ffff
+         
        </div>
      )
    }
