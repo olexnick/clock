@@ -1,11 +1,20 @@
 import history from "../utils/history.js";
+import store from "../store/store";
 
 export function selectZone({ zone, selectedZones }) {
-  return {
-    type: "clocks/SELECT_ZONE",
-    payload: {
-      selectedZones: selectedZones.concat(zone)
-    }
+  return dispatch => {
+    let zoneWithId = {
+      id: new Date().getTime(),
+      gmt: zone.gmt,
+      name: zone.name
+    };
+    console.log("zoneWithId", zoneWithId);
+    dispatch({
+      type: "clocks/SELECT_ZONE",
+      payload: {
+        selectedZones: selectedZones.concat([zoneWithId])
+      }
+    });
   };
 }
 
@@ -24,12 +33,16 @@ export function sortZones(zones, typeSort) {
     });
   };
 }
-
-export function showDialogs(val) {
-  return {
-    type: "show/modal",
-    payload: {
-      modalVisible: val
-    }
-  };
+export function deleteZones(id) {
+  return dispatch => {
+    const state = store.getState();
+    dispatch({
+      type: "clocks/DELETE_ZONE",
+      payload: {
+        selectedZones: state.selectedZones.filter(z => {
+          return z.id !== id;
+        })
+      }
+    });
+  }
 }

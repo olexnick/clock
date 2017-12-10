@@ -27,7 +27,12 @@ class CollectionZone extends React.Component {
       <div>
         {this.props.selectedZones.map((zone, index) => {
           return (
-            <SelectedGMT time={this.state.time} zone={zone.name} key={index} />
+            <SelectedGMT
+              time={this.state.time}
+              zone={zone.name}
+              key={index}
+              id={zone.id}
+            />
           );
         })}
       </div>

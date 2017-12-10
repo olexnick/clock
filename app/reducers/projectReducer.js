@@ -1,5 +1,4 @@
 const initialState = {
-  modalVisible: false,
   selectedZones: []
 };
 
@@ -9,11 +8,11 @@ const Reduser = (state = initialState, action) => {
       return Object.assign({}, state, {
         selectedZones: action.payload.selectedZones
       });
-    case "show/modal":
-      return Object.assign({}, state, {
-        modalVisible: action.payload.modalVisible
-      });
     case "clocks/SORT_ZONES":
+      return Object.assign({}, state, {
+        selectedZones: action.payload.selectedZones
+      });
+    case "clocks/DELETE_ZONE":
       return Object.assign({}, state, {
         selectedZones: action.payload.selectedZones
       });
