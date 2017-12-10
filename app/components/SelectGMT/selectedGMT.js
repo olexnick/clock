@@ -2,8 +2,7 @@ import React from "react";
 import moment from "moment-timezone";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import {deleteZones} from "../../actions/Actions.js";
-
+import { deleteZones } from "../../actions/Actions.js";
 
 class SelectedGMT extends React.Component {
   constructor(props) {
@@ -20,10 +19,8 @@ class SelectedGMT extends React.Component {
       textZone: el.target.value
     });
   }
-  delete(id){
-    this.props.dispatch(
-      deleteZones(id)
-    );
+  delete(id) {
+    this.props.dispatch(deleteZones(id));
   }
 
   render() {
@@ -40,9 +37,8 @@ class SelectedGMT extends React.Component {
           >
             Delete
           </button>
-
           <textarea
-            className="form-control"
+            className="form-control note"
             onChange={this.textZone}
             rows="3"
             maxLength="120"
@@ -55,7 +51,7 @@ class SelectedGMT extends React.Component {
 
 SelectedGMT.propTypes = {
   time: PropTypes.any,
-  zone: PropTypes.string.isRequired,
+  zone: PropTypes.string.isRequired
 };
 
 export default connect()(SelectedGMT);

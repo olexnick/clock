@@ -3,11 +3,7 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import store from "../store/store.js";
 
-import {
-  Router,
-  Route,
-  Link
-} from 'react-router-dom';
+import { Router, Route, Link } from "react-router-dom";
 
 import history from "../utils/history";
 
@@ -21,7 +17,7 @@ ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
       <div>
-        <Route path="/" component={MainMenu}/>
+        <Route path="/" component={MainMenu} />
       </div>
     </Router>
   </Provider>,

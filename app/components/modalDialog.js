@@ -1,8 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
-import { withRouter } from 'react-router';
+import { withRouter } from "react-router";
 import { showDialogs, selectZone } from "../actions/Actions.js";
-import zones from './zones.js';
+import zones from "./zones.js";
 
 class ModalDialog extends React.Component {
   constructor(props) {
@@ -23,10 +23,10 @@ class ModalDialog extends React.Component {
   }
 
   clousDialogs() {
-    this.props.history.push('/');
+    this.props.history.push("/");
   }
   saveZone() {
-    this.props.history.push('/');
+    this.props.history.push("/");
     this.props.dispatch(
       selectZone({
         zone: this.state.zones.filter(z => {
@@ -39,8 +39,10 @@ class ModalDialog extends React.Component {
 
   render() {
     console.log("this.props.", this.props);
-    const classNames = this.props.location.pathname === "/create-clock" ?
-    "z-modal-show" : "z-modal";
+    const classNames =
+      this.props.location.pathname === "/create-clock"
+        ? "z-modal-show"
+        : "z-modal";
     return (
       <div className={classNames}>
         <div className="modal-dialog">
@@ -87,9 +89,11 @@ class ModalDialog extends React.Component {
     );
   }
 }
-export default withRouter(connect(function(store) {
-  return {
-    modalVisible: store.modalVisible,
-    selectedZones: store.selectedZones
-  };
-})(ModalDialog));
+export default withRouter(
+  connect(function(store) {
+    return {
+      modalVisible: store.modalVisible,
+      selectedZones: store.selectedZones
+    };
+  })(ModalDialog)
+);
